@@ -1,3 +1,3 @@
-import pretty from "minimist";
+import pretty from "./minimist";
 
 export default pretty;
