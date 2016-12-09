@@ -93,7 +93,7 @@ function pretty(opts) {
             return JSON.stringify(value) + '\n';
         }
 
-        line = `${asColoredLevel(value)} [${asISODate(value.time)}]`;
+        line = `[${asISODate(value.time)}] ${asColoredLevel(value)}`;
 
         if (value.name) {
             line += ' (';
