@@ -1,2 +1,2 @@
-# pino-pretty
-pino pretty for private purposes
+# hermione-bem-selector
+Select BEM entities in hermione test suites
