@@ -13,6 +13,7 @@ const levels = {
 
 const standardKeys = [
     'req',
+    'res',
     'pid',
     'hostname',
     'name',
