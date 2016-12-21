@@ -20,7 +20,8 @@ const standardKeys = [
     'level',
     'msg',
     'time',
-    'v'
+    'v',
+    'responseTime'
 ];
 
 function withSpaces(value) {
