@@ -1,2 +1,3 @@
-# hermione-bem-selector
-Select BEM entities in hermione test suites
+# pino-pretty-minimist
+
+Custom formatter for [pino](https://www.npmjs.com/package/pino) logger.
