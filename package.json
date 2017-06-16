@@ -13,7 +13,9 @@
     "lint:watch": "npm run lint -- --watch",
     "prepublish": "npm run lint && npm run test && npm run build",
     "test": "mocha --compilers js:babel-register src/**/*.test.js",
-    "test:watch": "npm run test -- --watch src/**/*.test.js"
+    "test:watch": "npm run test -- --watch src/**/*.test.js",
+    "release": "standard-version; git push --follow-tags origin master",
+    "github-release": "conventional-github-releaser -p angular -r 0"
   },
   "files": [
     "lib",

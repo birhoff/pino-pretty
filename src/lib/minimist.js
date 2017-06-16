@@ -24,6 +24,8 @@ const standardKeys = [
     'responseTime'
 ];
 
+let skipKeys = [];
+
 function withSpaces(value) {
     const lines = value.split('\n');
     for (let i = 1; i < lines.length; i++) {
@@ -37,7 +39,7 @@ function filter(value) {
     let result = '';
 
     for (let i = 0; i < keys.length; i++) {
-        if (standardKeys.indexOf(keys[i]) < 0) {
+        if (skipKeys.indexOf(keys[i]) < 0) {
             result += '    ' + keys[i] + ': ' + withSpaces(JSON.stringify(value[keys[i]], null, 2)) + '\n';
         }
     }
@@ -49,9 +51,12 @@ function isPinoLine(line) {
     return line.hasOwnProperty('hostname') && line.hasOwnProperty('pid') && (line.hasOwnProperty('v') && line.v === 1);
 }
 
-function pretty(opts) {
-    const timeTransOnly = opts && opts.timeTransOnly;
-    const formatter = opts && opts.formatter;
+function pretty(opts = {}) {
+    const timeTransOnly = opts.timeTransOnly;
+    const formatter = opts.formatter;
+
+    skipKeys = standardKeys.concat(opts.skip);
+
 
     const stream = split(mapLine);
     let ctx;
